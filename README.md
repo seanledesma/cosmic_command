@@ -1,6 +1,7 @@
 # cosmic_command
 
-Screenshot 2023-04-03 at 2.56.03 PM.png<img width="1014" alt="image" src="https://user-images.githubusercontent.com/87875153/229625810-6bbb1987-d4b6-4e3b-98e5-798fda24ff23.png">
+CosmicCommand.png<img width="1014" alt="image" src="https://user-images.githubusercontent.com/87875153/229626192-e7fc6825-53fa-47e7-9e38-15e0ff0e1e44.png">
+
 
 
 Final project done in collaboration with PeppersOnlyPizza for our Data Structures and Algorithms class.
