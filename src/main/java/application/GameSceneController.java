@@ -1,5 +1,7 @@
 package application;
 
+import java.nio.charset.StandardCharsets;
+
 import edu.princeton.cs.algs4.Graph;
 import edu.princeton.cs.algs4.In;
 import javafx.event.ActionEvent;
@@ -36,7 +38,7 @@ public class GameSceneController {
 	static Graph warMap;
 	static int attackingBase;
 	static int defendingBase = 1;
-	FXMLLoader loader = new FXMLLoader(getClass().getResource("src/application/GameSceneController.fxml"));
+	FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/GameScene.fxml"));
 	static boolean successful;
 	static String result;
 	public double difficulty = 0.3;
@@ -446,7 +448,8 @@ public class GameSceneController {
 	 */
 	public GameSceneController() {
 		// creates the graph and prints info. No real use yet.
-		In in = new In("src/Resources/levelOne.txt");
+		In in = new In(getClass().getResource("/levelOne.txt").getFile());
+
 		warMap = new Graph(in);
 
 		// Builds the array of bases. I want a linked list of some sort but starting

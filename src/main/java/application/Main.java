@@ -25,7 +25,7 @@ public class Main extends Application{
 		try {
 			stg = primaryStage;
 			primaryStage.setResizable(false);
-			Parent root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("/application/MainScene.fxml"));
 			
 			primaryStage.setTitle("Cosmic Command");	
 			
@@ -39,7 +39,7 @@ public class Main extends Application{
 	}
 	
 	public void changeScene(String fxml) throws IOException{
-		Parent pane = FXMLLoader.load(getClass().getResource(fxml));
+		Parent pane = FXMLLoader.load(getClass().getResource("/application/" + fxml));
 		stg.getScene().setRoot(pane);
 	}
 	

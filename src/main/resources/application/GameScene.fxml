@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GameSceneController">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <AnchorPane prefHeight="878.0" prefWidth="1287.0">
+         <children>
+            <Pane layoutX="1221.0" prefHeight="743.0" prefWidth="128.0">
+               <children>
+                  <Text layoutX="8.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #00B906;" text="ENEMY 1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="6.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Bases:" wrappingWidth="60.6666259765625" />
+                  <Text fx:id="enemyNumBases" layoutX="66.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="48.597656249999886">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="6.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enemy 1 Owned Bases:" wrappingWidth="64.60180664062409" />
+                  <Text layoutX="6.0" layoutY="469.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enemy 2 Owned Bases:" wrappingWidth="72.89648437499977" />
+                  <Line endX="65.0" layoutX="64.0" layoutY="743.0" startX="-63.0" startY="-1.0" stroke="#727272" />
+                  <Text layoutX="5.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #FF0000;" text="ENEMY 2" wrappingWidth="85.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="7.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Bases:" wrappingWidth="60.0001220703125" />
+                  <Text fx:id="enemy1Owned" layoutX="23.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" wrappingWidth="67.0">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="enemy2Owned" layoutX="31.0" layoutY="549.0" strokeType="OUTSIDE" strokeWidth="0.0" text="7" wrappingWidth="67.0">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="enemy2NumBases" layoutX="68.0" layoutY="432.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="47.06787109375">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <ImageView fitHeight="743.0" fitWidth="1093.0" layoutX="129.0" layoutY="-1.0" pickOnBounds="true">
+               <image>
+                  <Image url="@/maps/map-3.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="attacking0" layoutX="235.0" layoutY="327.0" mnemonicParsing="false" onAction="#attackingBtn" prefHeight="24.0" prefWidth="80.0" style="-fx-background-color: #47B6FF;" text="Select 0" userData="0" />
+            <Button id="base1" fx:id="attacking1" layoutX="435.0" layoutY="207.0" mnemonicParsing="false" onAction="#attackingBtn" prefHeight="24.0" prefWidth="80.0" text="Select 1" userData="1" />
+            <Button id="base1" fx:id="attacking2" layoutX="739.0" layoutY="290.0" mnemonicParsing="false" onAction="#attackingBtn" prefHeight="24.0" prefWidth="74.0" text="Select 2" userData="2" />
+            <Button id="base1" fx:id="attacking3" layoutX="677.0" layoutY="99.0" mnemonicParsing="false" onAction="#attackingBtn" prefHeight="24.0" prefWidth="80.0" text="Select 3" userData="3" />
+            <Button id="base1" fx:id="attacking4" layoutX="867.0" layoutY="62.0" mnemonicParsing="false" onAction="#attackingBtn" prefHeight="24.0" prefWidth="76.0" style="-fx-background-color: #40FF7A;" text="Select 4" userData="4" />
+            <Button id="base1" fx:id="attacking5" layoutX="937.0" layoutY="239.0" mnemonicParsing="false" onAction="#attackingBtn" prefHeight="24.0" prefWidth="73.0" text="Select 5" userData="5" />
+            <Button id="base1" fx:id="attacking6" layoutX="937.0" layoutY="394.0" mnemonicParsing="false" onAction="#attackingBtn" prefHeight="24.0" prefWidth="85.0" text="Select 6" userData="6" />
+            <Button id="base1" fx:id="attacking7" layoutX="853.0" layoutY="567.0" mnemonicParsing="false" onAction="#attackingBtn" prefHeight="24.0" prefWidth="75.0" style="-fx-background-color: #E15651;" text="Select 7" userData="7" />
+            <Button id="base1" fx:id="attacking8" layoutX="682.0" layoutY="493.0" mnemonicParsing="false" onAction="#attackingBtn" prefHeight="24.0" prefWidth="76.0" text="Select 8" userData="8" />
+            <Button id="base1" fx:id="attacking9" layoutX="442.0" layoutY="415.0" mnemonicParsing="false" onAction="#attackingBtn" prefHeight="24.0" prefWidth="76.0" text="Select 9" userData="9" />
+            <Button id="base1" fx:id="defending1" layoutX="436.0" layoutY="234.0" mnemonicParsing="false" onAction="#defendingBtn" prefHeight="24.0" prefWidth="80.0" text="Attack 1" userData="1" />
+            <Button id="base1" fx:id="defending2" layoutX="740.0" layoutY="318.0" mnemonicParsing="false" onAction="#defendingBtn" prefHeight="24.0" prefWidth="74.0" text="Attack 2" userData="2" />
+            <Button id="base1" fx:id="defending3" layoutX="677.0" layoutY="126.0" mnemonicParsing="false" onAction="#defendingBtn" prefHeight="24.0" prefWidth="80.0" text="Attack 3" userData="3" />
+            <Button id="base1" fx:id="defending4" layoutX="867.0" layoutY="90.0" mnemonicParsing="false" onAction="#defendingBtn" prefHeight="24.0" prefWidth="76.0" style="-fx-background-color: #40FF7A;" text="Attack 4" userData="4" />
+            <Button id="base1" fx:id="defending5" layoutX="938.0" layoutY="266.0" mnemonicParsing="false" onAction="#defendingBtn" prefHeight="24.0" prefWidth="73.0" text="Attack 5" userData="5" />
+            <Button id="base1" fx:id="defending6" layoutX="937.0" layoutY="422.0" mnemonicParsing="false" onAction="#defendingBtn" prefHeight="24.0" prefWidth="85.0" text="Attack 6" userData="6" />
+            <Button id="base1" fx:id="defending7" layoutX="853.0" layoutY="595.0" mnemonicParsing="false" onAction="#defendingBtn" prefHeight="0.0" prefWidth="75.0" style="-fx-background-color: #E15651;" text="Attack 7" userData="7" />
+            <Button id="base1" fx:id="defending8" layoutX="682.0" layoutY="523.0" mnemonicParsing="false" onAction="#defendingBtn" prefHeight="24.0" prefWidth="76.0" text="Attack 8" userData="8" />
+            <Button id="base1" fx:id="defending9" layoutX="443.0" layoutY="442.0" mnemonicParsing="false" onAction="#defendingBtn" prefHeight="24.0" prefWidth="75.0" text="Attack 9" userData="9" />
+            <Button fx:id="nextBtn" layoutX="166.0" layoutY="619.0" mnemonicParsing="false" onAction="#next" prefHeight="86.0" prefWidth="136.0" text="Next Round">
+               <font>
+                  <Font size="16.0" />
+               </font></Button>
+            <Pane layoutX="-1.0" layoutY="-1.0" prefHeight="743.0" prefWidth="136.0">
+               <children>
+                  <Text layoutX="9.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Bases:" wrappingWidth="66.0" />
+                  <Text fx:id="playerText" layoutX="8.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #0000ff;" text="PLAYER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="9.0" layoutY="487.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ROUND SUMMARY:" wrappingWidth="109.7138671875" />
+                  <Text fx:id="numOfBases" layoutX="75.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="47.06787109375">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="9.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Owned Bases:" wrappingWidth="66.0" />
+                  <Line endX="52.7412109375" layoutX="76.0" layoutY="743.0" startX="-75.0" stroke="#727272" />
+                  <Text fx:id="playerOwned" layoutX="23.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="67.0">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="summary" layoutX="14.0" layoutY="550.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="85.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+               </children></Pane>
+            <Pane layoutY="742.0" prefHeight="131.0" prefWidth="1350.0">
+               <children>
+                  <Text fx:id="base0Txt" layoutX="25.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #0000FF;" text="Base 00">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="35.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Troops:" />
+                  <Text layoutX="36.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Health:" />
+                  <Text fx:id="base1Txt" layoutX="147.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Base 01">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="base2Txt" layoutX="278.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Base 02">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="base3Txt" layoutX="405.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Base 03">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="base4Txt" layoutX="526.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #008D0E;" text="Base 04">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="base5Txt" layoutX="653.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Base 05">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="base6Txt" layoutX="783.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Base 06">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="base7Txt" layoutX="912.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #FF0000;" text="Base 07">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="base8Txt" layoutX="1042.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Base 08">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="base9Txt" layoutX="1173.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Base 09">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="167.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Troops:" />
+                  <Text layoutX="167.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Health:" />
+                  <Text layoutX="290.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Troops:" />
+                  <Text layoutX="290.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Health:" />
+                  <Text layoutX="416.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Troops:" />
+                  <Text layoutX="416.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Health:" />
+                  <Text layoutX="537.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Troops:" />
+                  <Text layoutX="538.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Health:" />
+                  <Text layoutX="664.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Troops:" />
+                  <Text layoutX="664.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Health:" />
+                  <Text layoutX="803.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Troops:" />
+                  <Text layoutX="803.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Health:" />
+                  <Text layoutX="926.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Troops:" />
+                  <Text layoutX="928.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Health:" />
+                  <Text layoutX="1062.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Troops:" />
+                  <Text layoutX="1062.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Health:" />
+                  <Text layoutX="1195.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Troops:" />
+                  <Text layoutX="1195.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Health:" />
+                  <Text fx:id="troop0" layoutX="94.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="250">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="hlth0" layoutX="94.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="troop1" layoutX="223.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="hlth1" layoutX="223.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="troop2" layoutX="343.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="hlth2" layoutX="342.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="troop3" layoutX="472.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="hlth3" layoutX="472.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="troop4" layoutX="599.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="250">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="hlth4" layoutX="599.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="troop5" layoutX="717.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="hlth5" layoutX="717.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="troop6" layoutX="854.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="hlth6" layoutX="853.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="troop7" layoutX="979.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="250">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="hlth7" layoutX="978.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="troop8" layoutX="1115.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="hlth8" layoutX="1113.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="troop9" layoutX="1248.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="hlth9" layoutX="1247.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Line endX="-2.0" endY="-63.0" layoutX="141.0" layoutY="62.0" startX="-2.0" startY="68.0" />
+                  <Line endX="6.0" endY="-71.0" layoutX="265.0" layoutY="71.0" startX="6.0" startY="60.0" />
+                  <Line endX="6.0" endY="-83.0" layoutX="385.0" layoutY="83.0" startX="6.0" startY="48.0" />
+                  <Line endX="6.0" endY="-83.0" layoutX="512.0" layoutY="84.0" startX="6.0" startY="48.0" />
+                  <Line endX="6.0" endY="-83.0" layoutX="638.0" layoutY="84.0" startX="6.0" startY="48.0" />
+                  <Line endX="6.0" endY="-83.0" layoutX="762.0" layoutY="82.0" startX="6.0" startY="48.0" />
+                  <Line endX="6.0" endY="-83.0" layoutX="895.0" layoutY="82.0" startX="6.0" startY="48.0" />
+                  <Line endX="6.0" endY="-83.0" layoutX="1027.0" layoutY="84.0" startX="6.0" startY="48.0" />
+                  <Line endX="6.0" endY="-83.0" layoutX="1159.0" layoutY="82.0" startX="6.0" startY="48.0" />
+               </children>
+            </Pane>
+            <Button fx:id="defending0" layoutX="235.0" layoutY="356.0" mnemonicParsing="false" onAction="#defendingBtn" prefHeight="24.0" prefWidth="80.0" style="-fx-background-color: #47B6FF;" text="Attack 0" userData="0" />
+            <RadioButton fx:id="diffEasy" layoutX="1085.0" layoutY="617.0" mnemonicParsing="false" onAction="#selectDifficulty" text="Easy" textFill="WHITE" userData="0.6">
+               <toggleGroup>
+                  <ToggleGroup fx:id="difficultySelect" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="diffMedium" layoutX="1085.0" layoutY="646.0" mnemonicParsing="false" onAction="#selectDifficulty" selected="true" text="Medium" textFill="WHITE" toggleGroup="$difficultySelect" userData="0.3" />
+            <RadioButton fx:id="diffHard" layoutX="1085.0" layoutY="675.0" mnemonicParsing="false" onAction="#selectDifficulty" text="Hard" textFill="WHITE" toggleGroup="$difficultySelect" userData="0.0" />
+            <Text fill="WHITE" layoutX="1070.0" layoutY="599.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Difficulty Settings">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
