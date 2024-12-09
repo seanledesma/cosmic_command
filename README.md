@@ -1,13 +1,9 @@
 CosmicCommand.png<img width="1014" alt="image" src="https://user-images.githubusercontent.com/87875153/229626192-e7fc6825-53fa-47e7-9e38-15e0ff0e1e44.png">
 
 
-
-Final project done in collaboration with PeppersOnlyPizza for our Data Structures and Algorithms class.
-
-
 [![Click here to see a video demo of Cosmic Command](http://img.youtube.com/watch?v=chQ3ZE_LCj8/0.jpg)](https://www.youtube.com/watch?v=chQ3ZE_LCj8 "Cosmic Command")
 
-```markdown
+
 # Cosmic Command
 
 A space-themed strategy game built with JavaFX where players compete against AI opponents for control of planetary bases. Developed by Braden Tolman & Sean Ledesma.
@@ -98,10 +94,3 @@ Cosmic Command is a turn-based strategy game where players must conquer space ba
 - Developed by Braden Tolman & Sean Ledesma
 - Built using JavaFX and Princeton's algs4 library
 
-## License
-[Your chosen license]
-```
-
-This README provides installation instructions, gameplay details, and technical information while keeping it straightforward and focused. You can customize the license section and GitHub URLs as needed.
-
-Do you want me to add or modify any sections?
