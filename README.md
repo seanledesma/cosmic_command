@@ -7,6 +7,7 @@ Final project done in collaboration with PeppersOnlyPizza for our Data Structure
 
 [![Click here to see a video demo of Cosmic Command](http://img.youtube.com/watch?v=chQ3ZE_LCj8/0.jpg)](https://www.youtube.com/watch?v=chQ3ZE_LCj8 "Cosmic Command")
 
+```markdown
 # Cosmic Command
 
 A space-themed strategy game built with JavaFX where players compete against AI opponents for control of planetary bases. Developed by Braden Tolman & Sean Ledesma.
@@ -22,6 +23,7 @@ A space-themed strategy game built with JavaFX where players compete against AI 
 1. Install Homebrew if you don't have it:
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 
 2. Install OpenJDK 21:
 ```bash
@@ -34,37 +36,72 @@ sudo ln -sfn $(brew --prefix)/opt/openjdk@21/libexec/openjdk.jdk /Library/Java/J
 brew install maven
 ```
 
+### Running the Game
 
-## Running the Game
-
-1. Open Terminal and navigate to your project directory:
+1. Clone this repository:
 ```bash
-cd path/to/cosmic-command
+git clone https://github.com/yourusername/cosmic-command.git
+cd cosmic-command
 ```
 
-2. Clean and compile the project:
+2. Compile and run:
 ```bash
 mvn clean compile
-```
-
-3. Run the game:
-```bash
 mvn exec:java -Dexec.mainClass="application.Main"
 ```
 
-## Troubleshooting
+### Troubleshooting
 
-- If you get path-related errors, ensure your project directory path doesn't contain spaces or special characters
-- Make sure all resources (images, fxml files) are in their correct locations
-- Verify that algs4.jar is present in the lib directory
-- Check that Java and Maven are properly installed:
-  ```bash
-  java --version
-  mvn --version
-  ```
+- Verify Java and Maven installation:
+```bash
+java --version
+mvn --version
+```
+- Make sure you're running the commands from the project root directory
+- If you get compilation errors, ensure you have JDK 21 or later set as your Java version
 
-## Important Notes
+## Game Description
 
-- The game requires JDK 21 or later
-- All file paths in FXML files should use the "@" notation (e.g., "@/maps/map-3.png")
-- Resource files must be in the correct locations under src/main/resources
+Cosmic Command is a turn-based strategy game where players must conquer space bases while defending against two AI opponents. Each base has troops and health points, and players must strategically choose which bases to attack or defend.
+
+### Features
+- Turn-based strategic gameplay
+- Multiple difficulty settings (Easy, Medium, Hard)
+- Two AI opponents with adjustable difficulty
+- Resource management (troops and base health)
+- Graph-based map layout for strategic depth
+
+### How to Play
+
+1. **Starting the Game**
+   - Click "New Game" from the title screen
+   - Select your preferred difficulty level using the radio buttons
+
+2. **Game Controls**
+   - Use "Select" buttons to choose your attacking base
+   - Use "Attack" buttons to choose your target base
+   - Click "Next Round" to end your turn
+
+3. **Gameplay Mechanics**
+   - Each base starts with health points and troops
+   - You can only attack bases connected to your current positions
+   - Troops will automatically regenerate each turn if under the cap
+   - Win by capturing all enemy bases
+
+### Technologies Used
+- Java 21
+- JavaFX for GUI
+- Princeton's algs4 library for graph algorithms
+- Maven for build management
+
+## Credits
+- Developed by Braden Tolman & Sean Ledesma
+- Built using JavaFX and Princeton's algs4 library
+
+## License
+[Your chosen license]
+```
+
+This README provides installation instructions, gameplay details, and technical information while keeping it straightforward and focused. You can customize the license section and GitHub URLs as needed.
+
+Do you want me to add or modify any sections?
