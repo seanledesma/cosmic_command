@@ -1,60 +1,88 @@
-CosmicCommand.png<img width="1014" alt="image" src="https://user-images.githubusercontent.com/87875153/229626192-e7fc6825-53fa-47e7-9e38-15e0ff0e1e44.png">
+<img width="1014" alt="Cosmic Command Screenshot" src="https://user-images.githubusercontent.com/87875153/229626192-e7fc6825-53fa-47e7-9e38-15e0ff0e1e44.png">
 
-
-[![Click here to see a video demo of Cosmic Command](http://img.youtube.com/watch?v=chQ3ZE_LCj8/0.jpg)](https://www.youtube.com/watch?v=chQ3ZE_LCj8 "Cosmic Command")
-
+[![Build Cosmic Command](https://github.com/seanledesma/cosmic_command/actions/workflows/build.yml/badge.svg)](https://github.com/seanledesma/cosmic_command/actions/workflows/build.yml)
 
 # Cosmic Command
 
-A space-themed strategy game built with JavaFX where players compete against AI opponents for control of planetary bases. Developed by Braden Tolman & Sean Ledesma.
+A space-themed turn-based strategy game built with JavaFX where players compete against AI opponents for control of planetary bases.
 
-## macOS Setup Guide
+**Developed by Braden Tolman & Sean Ledesma**
+
+[![Video Demo](http://img.youtube.com/vi/chQ3ZE_LCj8/0.jpg)](https://www.youtube.com/watch?v=chQ3ZE_LCj8 "Cosmic Command Video Demo")
+
+## Download
+
+Pre-built installers are available for all platforms - no Java installation required:
+
+| Platform | Download |
+|----------|----------|
+| macOS | [Cosmic Command.dmg](https://github.com/seanledesma/cosmic_command/releases/latest) |
+| Windows | [Cosmic Command.msi](https://github.com/seanledesma/cosmic_command/releases/latest) |
+| Linux | [cosmic-command.deb](https://github.com/seanledesma/cosmic_command/releases/latest) |
+
+## Running from Source
 
 ### Prerequisites
 - Java Development Kit (JDK) 21 or later
 - Apache Maven
 
-### Installation Steps
+### Quick Start
 
-1. Install Homebrew if you don't have it:
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# Clone the repository
+git clone https://github.com/seanledesma/cosmic_command.git
+cd cosmic_command
+
+# Install the algs4 library to your local Maven repository
+mvn install:install-file -Dfile=lib/algs4.jar -DgroupId=edu.princeton.cs -DartifactId=algs4 -Dversion=1.0.0.0 -Dpackaging=jar
+
+# Build and run
+mvn clean package
+java -jar target/cosmic-command-1.0-SNAPSHOT.jar
 ```
 
-2. Install OpenJDK 21:
+Or use the run script (macOS/Linux):
 ```bash
+./run.sh
+```
+
+### Building Native Installers
+
+To create a platform-specific installer on your machine:
+
+```bash
+# Build the JAR first
+mvn clean package
+
+# Create installer (macOS)
+jpackage --type dmg --name "Cosmic Command" --input target \
+  --main-jar cosmic-command-1.0-SNAPSHOT.jar --main-class application.Launcher \
+  --icon icon.icns --dest build --app-version 1.0.0
+
+# Create installer (Windows)
+jpackage --type msi --name "Cosmic Command" --input target \
+  --main-jar cosmic-command-1.0-SNAPSHOT.jar --main-class application.Launcher \
+  --icon icon.ico --dest build --app-version 1.0.0 --win-menu --win-shortcut
+
+# Create installer (Linux)
+jpackage --type deb --name "cosmic-command" --input target \
+  --main-jar cosmic-command-1.0-SNAPSHOT.jar --main-class application.Launcher \
+  --icon icon.png --dest build --app-version 1.0.0
+```
+
+### macOS Setup (if you need to install Java/Maven)
+
+```bash
+# Install Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Install OpenJDK 21
 brew install openjdk@21
 sudo ln -sfn $(brew --prefix)/opt/openjdk@21/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-21.jdk
-```
 
-3. Install Maven:
-```bash
+# Install Maven
 brew install maven
 ```
-
-### Running the Game
-
-1. Clone this repository:
-```bash
-git clone https://github.com/yourusername/cosmic-command.git
-cd cosmic-command
-```
-
-2. Compile and run:
-```bash
-mvn clean compile
-mvn exec:java -Dexec.mainClass="application.Main"
-```
-
-### Troubleshooting
-
-- Verify Java and Maven installation:
-```bash
-java --version
-mvn --version
-```
-- Make sure you're running the commands from the project root directory
-- If you get compilation errors, ensure you have JDK 21 or later set as your Java version
 
 ## Game Description
 
@@ -81,16 +109,16 @@ Cosmic Command is a turn-based strategy game where players must conquer space ba
 3. **Gameplay Mechanics**
    - Each base starts with health points and troops
    - You can only attack bases connected to your current positions
-   - Troops will automatically regenerate each turn if under the cap
+   - Troops automatically regenerate each turn (capped at 300)
    - Win by capturing all enemy bases
 
-### Technologies Used
+## Technologies Used
 - Java 21
 - JavaFX for GUI
 - Princeton's algs4 library for graph algorithms
 - Maven for build management
+- GitHub Actions for CI/CD
 
-## Credits
-- Developed by Braden Tolman & Sean Ledesma
-- Built using JavaFX and Princeton's algs4 library
+## License
 
+This project is open source. See the repository for license details.

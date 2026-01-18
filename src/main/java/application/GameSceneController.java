@@ -448,7 +448,7 @@ public class GameSceneController {
 	 */
 	public GameSceneController() {
 		// creates the graph and prints info. No real use yet.
-		In in = new In(getClass().getResource("/levelOne.txt").getFile());
+		In in = new In(new java.util.Scanner(getClass().getResourceAsStream("/levelOne.txt")));
 
 		warMap = new Graph(in);
 

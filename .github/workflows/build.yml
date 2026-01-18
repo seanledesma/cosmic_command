@@ -1,0 +1,120 @@
+name: Build Cosmic Command
+
+on:
+  push:
+    branches: [ main ]
+    tags: [ 'v*' ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        include:
+          - os: macos-latest
+            platform: mac
+            icon: icon.icns
+            package-type: dmg
+            artifact-name: Cosmic-Command-macOS
+          - os: windows-latest
+            platform: win
+            icon: icon.ico
+            package-type: msi
+            artifact-name: Cosmic-Command-Windows
+          - os: ubuntu-latest
+            platform: linux
+            icon: icon.png
+            package-type: deb
+            artifact-name: Cosmic-Command-Linux
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Install algs4 library to local Maven repo
+        run: |
+          mvn install:install-file -Dfile=lib/algs4.jar -DgroupId=edu.princeton.cs -DartifactId=algs4 -Dversion=1.0.0.0 -Dpackaging=jar
+
+      - name: Build with Maven
+        run: mvn clean package -q
+
+      - name: Create native package (macOS)
+        if: matrix.os == 'macos-latest'
+        run: |
+          jpackage \
+            --type ${{ matrix.package-type }} \
+            --name "Cosmic Command" \
+            --input target \
+            --main-jar cosmic-command-1.0-SNAPSHOT.jar \
+            --main-class application.Launcher \
+            --icon ${{ matrix.icon }} \
+            --dest dist \
+            --app-version 1.0.0 \
+            --vendor "Sean Ledesma & Braden Tolman" \
+            --java-options "-Xmx512m"
+
+      - name: Create native package (Windows)
+        if: matrix.os == 'windows-latest'
+        run: |
+          jpackage --type ${{ matrix.package-type }} --name "Cosmic Command" --input target --main-jar cosmic-command-1.0-SNAPSHOT.jar --main-class application.Launcher --icon ${{ matrix.icon }} --dest dist --app-version 1.0.0 --vendor "Sean Ledesma & Braden Tolman" --java-options "-Xmx512m" --win-menu --win-shortcut
+
+      - name: Create native package (Linux)
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          jpackage \
+            --type ${{ matrix.package-type }} \
+            --name "cosmic-command" \
+            --input target \
+            --main-jar cosmic-command-1.0-SNAPSHOT.jar \
+            --main-class application.Launcher \
+            --icon ${{ matrix.icon }} \
+            --dest dist \
+            --app-version 1.0.0 \
+            --vendor "Sean Ledesma & Braden Tolman" \
+            --java-options "-Xmx512m" \
+            --linux-shortcut
+
+      - name: List dist contents
+        run: ls -la dist/
+        shell: bash
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact-name }}
+          path: dist/*
+          retention-days: 30
+
+  # Create a release when a tag is pushed
+  release:
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Display structure of downloaded files
+        run: ls -R artifacts/
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: artifacts/**/*
+          generate_release_notes: true
