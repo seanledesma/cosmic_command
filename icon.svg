@@ -1,0 +1,81 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background circle -->
+    <circle cx="256" cy="256" r="256" fill="#1a1a1a"/>
+    
+    <!-- Stars - a lot more of them! -->
+    <g opacity="0.8">
+        <circle cx="100" cy="100" r="2" fill="white"/>
+        <circle cx="400" cy="150" r="2.5" fill="white"/>
+        <circle cx="200" cy="450" r="2" fill="white"/>
+        <circle cx="450" cy="350" r="2.5" fill="white"/>
+        <circle cx="300" cy="100" r="2" fill="white"/>
+        <circle cx="150" cy="300" r="2" fill="white"/>
+        <circle cx="380" cy="420" r="2" fill="white"/>
+        <circle cx="80" cy="380" r="2" fill="white"/>
+        <circle cx="420" cy="80" r="2" fill="white"/>
+        <circle cx="250" cy="200" r="2" fill="white"/>
+        <circle cx="150" cy="150" r="2" fill="white"/>
+        <circle cx="350" cy="200" r="2" fill="white"/>
+        <circle cx="120" cy="400" r="2" fill="white"/>
+        <circle cx="480" cy="250" r="2" fill="white"/>
+        <circle cx="40" cy="200" r="2" fill="white"/>
+        <circle cx="180" cy="80" r="2" fill="white"/>
+        <circle cx="320" cy="450" r="2" fill="white"/>
+        <circle cx="460" cy="150" r="2" fill="white"/>
+        <circle cx="280" cy="320" r="2" fill="white"/>
+        <circle cx="50" cy="300" r="2" fill="white"/>
+    </g>
+    
+    <!-- Smaller stars -->
+    <g opacity="0.6">
+        <circle cx="120" cy="180" r="1" fill="white"/>
+        <circle cx="360" cy="280" r="1" fill="white"/>
+        <circle cx="220" cy="380" r="1" fill="white"/>
+        <circle cx="440" cy="420" r="1" fill="white"/>
+        <circle cx="280" cy="40" r="1" fill="white"/>
+        <circle cx="180" cy="260" r="1" fill="white"/>
+        <circle cx="400" cy="360" r="1" fill="white"/>
+        <circle cx="60" cy="420" r="1" fill="white"/>
+        <circle cx="380" cy="60" r="1" fill="white"/>
+        <circle cx="230" cy="160" r="1" fill="white"/>
+        <circle cx="130" cy="220" r="1" fill="white"/>
+        <circle cx="330" cy="240" r="1" fill="white"/>
+        <circle cx="140" cy="440" r="1" fill="white"/>
+        <circle cx="460" cy="200" r="1" fill="white"/>
+        <circle cx="70" cy="160" r="1" fill="white"/>
+        <circle cx="160" cy="120" r="1" fill="white"/>
+        <circle cx="340" cy="410" r="1" fill="white"/>
+        <circle cx="420" cy="190" r="1" fill="white"/>
+        <circle cx="260" cy="360" r="1" fill="white"/>
+        <circle cx="90" cy="280" r="1" fill="white"/>
+        <circle cx="310" cy="150" r="1" fill="white"/>
+        <circle cx="430" cy="330" r="1" fill="white"/>
+        <circle cx="170" cy="390" r="1" fill="white"/>
+        <circle cx="390" cy="230" r="1" fill="white"/>
+    </g>
+    
+    <!-- Main orange planet (made slightly larger) -->
+    <circle cx="256" cy="256" r="130" fill="#E67E22"/>
+    <circle cx="256" cy="256" r="130" fill="url(#planetGradient)"/>
+    
+    <!-- Orbiting base (adjusted for larger planet) -->
+    <g transform="rotate(45, 256, 256)">
+        <circle cx="256" cy="86" r="45" fill="#95A5A6"/>
+        <circle cx="256" cy="86" r="45" fill="url(#baseGradient)"/>
+    </g>
+    
+    <!-- Orbital path (adjusted for larger elements) -->
+    <circle cx="256" cy="256" r="170" fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="10,10" opacity="0.3"/>
+    
+    <!-- Gradients -->
+    <defs>
+        <radialGradient id="planetGradient">
+            <stop offset="0%" stop-color="transparent"/>
+            <stop offset="80%" stop-color="rgba(0,0,0,0.3)"/>
+        </radialGradient>
+        <radialGradient id="baseGradient">
+            <stop offset="0%" stop-color="transparent"/>
+            <stop offset="90%" stop-color="rgba(0,0,0,0.2)"/>
+        </radialGradient>
+    </defs>
+</svg>
