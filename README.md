@@ -17,7 +17,7 @@ Pre-built installers are available for all platforms - no Java installation requ
 | Platform | Download |
 |----------|----------|
 | macOS | [Cosmic Command.dmg](https://github.com/seanledesma/cosmic_command/releases/latest) |
-| Windows | [Cosmic Command.msi](https://github.com/seanledesma/cosmic_command/releases/latest) |
+| Windows | [Cosmic Command.exe](https://github.com/seanledesma/cosmic_command/releases/latest) |
 | Linux | [cosmic-command.deb](https://github.com/seanledesma/cosmic_command/releases/latest) |
 
 ## Running from Source
@@ -60,7 +60,7 @@ jpackage --type dmg --name "Cosmic Command" --input target \
   --icon icon.icns --dest build --app-version 1.0.0
 
 # Create installer (Windows)
-jpackage --type msi --name "Cosmic Command" --input target \
+jpackage --type exe --name "Cosmic Command" --input target \
   --main-jar cosmic-command-1.0-SNAPSHOT.jar --main-class application.Launcher \
   --icon icon.ico --dest build --app-version 1.0.0 --win-menu --win-shortcut
 

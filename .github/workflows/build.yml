@@ -11,6 +11,7 @@ on:
 jobs:
   build:
     strategy:
+      fail-fast: false
       matrix:
         include:
           - os: macos-latest
@@ -21,7 +22,7 @@ jobs:
           - os: windows-latest
             platform: win
             icon: icon.ico
-            package-type: msi
+            package-type: exe
             artifact-name: Cosmic-Command-Windows
           - os: ubuntu-latest
             platform: linux
