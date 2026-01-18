@@ -43,9 +43,14 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Install algs4 library to local Maven repo
-        run: |
-          mvn install:install-file -Dfile=lib/algs4.jar -DgroupId=edu.princeton.cs -DartifactId=algs4 -Dversion=1.0.0.0 -Dpackaging=jar
+      - name: Install algs4 library to local Maven repo (Unix)
+        if: matrix.os != 'windows-latest'
+        run: mvn install:install-file -Dfile=lib/algs4.jar -DgroupId=edu.princeton.cs -DartifactId=algs4 -Dversion=1.0.0.0 -Dpackaging=jar
+
+      - name: Install algs4 library to local Maven repo (Windows)
+        if: matrix.os == 'windows-latest'
+        run: mvn install:install-file "-Dfile=lib\algs4.jar" "-DgroupId=edu.princeton.cs" "-DartifactId=algs4" "-Dversion=1.0.0.0" "-Dpackaging=jar"
+        shell: cmd
 
       - name: Build with Maven
         run: mvn clean package -q
